@@ -19,7 +19,7 @@ public class SingleConnection {
 		this.connect();
 	}
 
-	private static void connect()  {
+	private static void connect() {
 		try {
 			if(connection == null) { // A conexão com o banco de dados é feita apenas uma vez.
 				Class.forName("org.postgresql.Driver");
@@ -30,11 +30,8 @@ public class SingleConnection {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
-		}
-		
-		
+		}		
 	}
-	
 	
 	public static Connection getConnection() {
 		return connection;
