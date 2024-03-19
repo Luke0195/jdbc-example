@@ -4,7 +4,9 @@ package application;
 import java.util.List;
 
 import connection.SingleConnection;
+import dao.PhoneDao;
 import dao.UserDao;
+import entities.Phone;
 import entities.User;
 
 public class Main {
@@ -12,8 +14,14 @@ public class Main {
 	
 	public static void main(String[]args) {
 		 try {
-		   UserDao dao = new UserDao();
-		   dao.delete(1L);
+		    UserDao userDao = new UserDao();
+			
+		    
+		    Phone phone = new Phone(1L, "(31)99284-9429", "(31)9401-92402", 3L);
+		    PhoneDao phoneDao = new PhoneDao();
+		    phoneDao.insert(phone);
+			
+			
 			 
 		 }catch(Exception e) {
 			 e.printStackTrace();

@@ -19,11 +19,10 @@ public class UserDao {
 	}
 	
 	public void createUser(User user) throws SQLException {
-		 String querySql = "INSERT INTO users(id,name, email) VALUES(?,?,?)";
+		 String querySql = "INSERT INTO users(name, email) VALUES(?,?)";
 		 PreparedStatement preparedStatement = connection.prepareStatement(querySql);
-		 preparedStatement.setLong(1, user.getId());
-		 preparedStatement.setString(2, user.getName());
-		 preparedStatement.setString(3, user.getEmail());
+		 preparedStatement.setString(1, user.getName());
+		 preparedStatement.setString(2, user.getEmail());
 		 preparedStatement.execute();
 		 connection.commit();
 	}
