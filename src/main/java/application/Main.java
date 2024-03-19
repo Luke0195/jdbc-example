@@ -13,11 +13,7 @@ public class Main {
 	public static void main(String[]args) {
 		 try {
 		   UserDao dao = new UserDao();
-		   User user = new User();
-		   user.setId(1L);
-		   user.setName("nome atualizado");
-		   user.setEmail("email_atualizado@mail.com");
-		   dao.update(user);
+		   dao.delete(1L);
 			 
 		 }catch(Exception e) {
 			 e.printStackTrace();

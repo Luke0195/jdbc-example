@@ -66,5 +66,25 @@ public class UserDao {
 		connection.commit();	
 		
 	}
+	
+	
+	public void delete(Long id) {
+		String querySQL = "DELETE FROM users where id = " + id;
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(querySQL);
+			preparedStatement.execute();
+			connection.commit();
+			
+		} catch (SQLException e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+		
+		
+	}
 
 }
